@@ -1,4 +1,4 @@
-package org.mss;
+package org.mss.rest;
 
 import org.osgi.service.cdi.annotations.Service;
 

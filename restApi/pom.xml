@@ -11,6 +11,13 @@
     <artifactId>restApi</artifactId>
     <packaging>bundle</packaging>
     <dependencies>
+        <!-- Junit 5 -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
         <!-- osgi core v7 -->
         <dependency>
             <groupId>org.osgi</groupId>
@@ -18,14 +25,13 @@
             <version>7.0.0</version>
         </dependency>
 
-        <!-- Whiteboard JaxRx -->
+        <!-- Whiteboard JaxRs -->
         <dependency>
             <groupId>javax.ws.rs</groupId>
             <artifactId>javax.ws.rs-api</artifactId>
             <version>2.1</version>
             <scope>provided</scope>
         </dependency>
-
 
         <!-- CDI -->
         <dependency>
@@ -48,6 +54,34 @@
             <artifactId>osgi.cmpn</artifactId>
             <version>7.0.0</version>
         </dependency>
+
+        <!-- JPA -->
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>javax.persistence</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>javax.transaction-api</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.interceptor</groupId>
+            <artifactId>javax.interceptor-api</artifactId>
+            <version>1.2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.aries.jpa</groupId>
+            <artifactId>org.apache.aries.jpa.api</artifactId>
+            <version>2.7.2</version>
+        </dependency>
+<!--        ///-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.26</version>
+        </dependency>
     </dependencies>
 
     <properties>
@@ -63,13 +97,14 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+                        <!-- CDI -->
                         <_cdiannotations>*;discover=annotated</_cdiannotations>
-                        <!--                        <Import-Package>-->
-                        <!--                            *-->
-                        <!--                        </Import-Package>-->
-                        <!--                        <Private-Package>-->
-                        <!--                            org.apache.karaf.examples.rest.whiteboard-->
-                        <!--                        </Private-Package>-->
+                        <!-- JPA -->
+                        <Meta-Persistence>META-INF/persistence.xml</Meta-Persistence>
+                        <Import-Package>
+                            javax.persistence;version="[2,3)",
+                            *
+                        </Import-Package>
                     </instructions>
                 </configuration>
             </plugin>
