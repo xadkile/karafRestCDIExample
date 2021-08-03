@@ -19,20 +19,20 @@
 <!--        </properties>-->
 <!--    </persistence-unit>-->
 
-<!--    <persistence-unit name="tacoCloudDb" transaction-type="RESOURCE_LOCAL">-->
-<!--        &lt;!&ndash; Persistence provider &ndash;&gt;-->
-<!--        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
-<!--        &lt;!&ndash; Entity classes &ndash;&gt;-->
-<!--        <class>org.mss.jpa.Booking</class>-->
-<!--        <properties>-->
-<!--            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />-->
-<!--            &lt;!&ndash; The JDBC URL to the database instance &ndash;&gt;-->
-<!--            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/tacocloud" />-->
-<!--            &lt;!&ndash; The database username &ndash;&gt;-->
-<!--            <property name="javax.persistence.jdbc.user" value="abc" />-->
-<!--            &lt;!&ndash; The database password &ndash;&gt;-->
-<!--            <property name="javax.persistence.jdbc.password" value="Qwe123$$" />-->
-<!--        </properties>-->
-<!--    </persistence-unit>-->
+    <persistence-unit name="tacoCloudDb" transaction-type="RESOURCE_LOCAL">
+        <!-- Persistence provider -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <!-- Entity classes -->
+        <class>org.mss.jpa.Booking</class>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+            <!-- The JDBC URL to the database instance -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/tacocloud" />
+            <!-- The database username -->
+            <property name="javax.persistence.jdbc.user" value="abc" />
+            <!-- The database password -->
+            <property name="javax.persistence.jdbc.password" value="Qwe123$$" />
+        </properties>
+    </persistence-unit>
 
 </persistence>

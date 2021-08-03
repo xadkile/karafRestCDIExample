@@ -76,7 +76,6 @@
             <artifactId>org.apache.aries.jpa.api</artifactId>
             <version>2.7.2</version>
         </dependency>
-<!--        ///-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -100,11 +99,11 @@
                         <!-- CDI -->
                         <_cdiannotations>*;discover=annotated</_cdiannotations>
                         <!-- JPA -->
-                        <Meta-Persistence>META-INF/persistence.xml</Meta-Persistence>
-                        <Import-Package>
-                            javax.persistence;version="[2,3)",
-                            *
-                        </Import-Package>
+<!--                        <Meta-Persistence>META-INF/persistence.xml</Meta-Persistence>-->
+<!--                        <Import-Package>-->
+<!--                            javax.persistence;version="[2,3)",-->
+<!--                            *-->
+<!--                        </Import-Package>-->
                     </instructions>
                 </configuration>
             </plugin>
