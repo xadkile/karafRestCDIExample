@@ -14,13 +14,13 @@ import javax.ws.rs.Produces;
  *  - correct feature.xml : to install required feature to karaf
  *  - annotated the classes correctly
  */
-@Path("myApi") //whiteboard part
+@Path("/myApi") //whiteboard
 @ApplicationScoped //CDI this is needed
-@Service // CDI
+@Service // osgi CDI
 @RProp // CDI
 public class MyApi {
     @GET // whiteboard
-    @Path("run_api") //whiteboard
+    @Path("/run_api") //whiteboard
     @Produces("application/json")
     public String runApi(){
         return "{\"run\": api}";

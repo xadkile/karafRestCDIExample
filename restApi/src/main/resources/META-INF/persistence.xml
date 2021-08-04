@@ -3,29 +3,14 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 
-
-<!--    <persistence-unit name="my-booking-hibernate" transaction-type="JTA">-->
-<!--        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
-
-<!--        &lt;!&ndash; Only used when transaction-type=JTA &ndash;&gt;-->
-<!--        <jta-data-source>osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=booking)</jta-data-source>-->
-
-<!--        &lt;!&ndash; Only used when transaction-type=RESOURCE_LOCAL &ndash;&gt;-->
-<!--        <non-jta-data-source>osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=booking)</non-jta-data-source>-->
-<!--        <class>org.mss.jpa.Booking</class>-->
-<!--        <properties>-->
-<!--            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>-->
-<!--            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>-->
-<!--        </properties>-->
-<!--    </persistence-unit>-->
-
     <persistence-unit name="tacoCloudDb" transaction-type="RESOURCE_LOCAL">
         <!-- Persistence provider -->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <!-- Entity classes -->
-        <class>org.mss.jpa.Booking</class>
+<!--        <class>org.mss.jpa.Booking</class>-->
         <properties>
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+<!--            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />-->
+            <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver" />
             <!-- The JDBC URL to the database instance -->
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/tacocloud" />
             <!-- The database username -->
