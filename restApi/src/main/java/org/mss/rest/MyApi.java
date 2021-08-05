@@ -3,6 +3,7 @@ package org.mss.rest;
 import org.osgi.service.cdi.annotations.Service;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -19,10 +20,15 @@ import javax.ws.rs.Produces;
 @Service // osgi CDI
 @RProp // CDI
 public class MyApi {
+
+    @Inject
+    ExampleServiceInterface service;
+
+
     @GET // whiteboard
     @Path("/run_api") //whiteboard
     @Produces("application/json")
     public String runApi(){
-        return "{\"run\": api}";
+        return String.format("{\"run\": %s}",service.doWork());
     }
 }

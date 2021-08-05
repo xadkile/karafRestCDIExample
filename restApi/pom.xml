@@ -40,16 +40,13 @@
             <version>1.0.0</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.geronimo.specs</groupId>
-            <artifactId>geronimo-atinject_1.0_spec</artifactId>
-            <version>1.2</version>
-        </dependency>
-        <dependency>
             <groupId>jakarta.enterprise</groupId>
             <artifactId>jakarta.enterprise.cdi-api</artifactId>
             <version>2.0.2</version>
         </dependency>
+
         <dependency>
+            <!-- for ds RProp only, nothing to do with CDI -->
             <groupId>org.osgi</groupId>
             <artifactId>osgi.cmpn</artifactId>
             <version>7.0.0</version>
@@ -61,6 +58,7 @@
             <artifactId>javax.persistence</artifactId>
             <version>2.1.0</version>
         </dependency>
+
         <dependency>
             <groupId>javax.transaction</groupId>
             <artifactId>javax.transaction-api</artifactId>
@@ -71,11 +69,17 @@
             <artifactId>javax.interceptor-api</artifactId>
             <version>1.2.2</version>
         </dependency>
+
         <dependency>
             <groupId>org.apache.aries.jpa</groupId>
             <artifactId>org.apache.aries.jpa.api</artifactId>
             <version>2.7.2</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.aries.jpa</groupId>-->
+<!--            <artifactId>org.apache.aries.jpa.api</artifactId>-->
+<!--            <version>2.7.2</version>-->
+<!--        </dependency>-->
     </dependencies>
 
     <properties>
@@ -95,10 +99,10 @@
                         <_cdiannotations>*;discover=annotated</_cdiannotations>
                         <!-- JPA: this Meta-Persistence cause buggy feature -->
                         <Meta-Persistence>META-INF/persistence.xml</Meta-Persistence>
-<!--                        <Import-Package>-->
-<!--                            javax.persistence;version="[2,3)",-->
-<!--                            *-->
-<!--                        </Import-Package>-->
+                        <Import-Package>
+                            javax.persistence;version="[2,3)",
+                            *
+                        </Import-Package>
                     </instructions>
                 </configuration>
             </plugin>

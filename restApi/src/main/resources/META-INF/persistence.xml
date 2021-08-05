@@ -3,20 +3,33 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 
-    <persistence-unit name="tacoCloudDb" transaction-type="RESOURCE_LOCAL">
-        <!-- Persistence provider -->
-        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <!-- Entity classes -->
-<!--        <class>org.mss.jpa.Booking</class>-->
+<!--    <persistence-unit name="tacoCloudDbUnit" transaction-type="RESOURCE_LOCAL">-->
+<!--        &lt;!&ndash; Persistence provider &ndash;&gt;-->
+<!--        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
+<!--        &lt;!&ndash; Only used when transaction-type=JTA &ndash;&gt;-->
+<!--        <jta-data-source>osgi:service/javax.sql.DataSource/(osgi.jndi.service.name = tacoCloudDb)</jta-data-source>-->
+
+<!--        &lt;!&ndash; Only used when transaction-type=RESOURCE_LOCAL &ndash;&gt;-->
+<!--        <non-jta-data-source>osgi:service/javax.sql.DataSource/(osgi.jndi.service.name = tacoCloudDb)</non-jta-data-source>-->
+<!--        <properties>-->
+<!--            <property name="eclipselink.target-database" value="MySql" />-->
+<!--            <property name="eclipselink.ddl-generation.output-mode" value="database" />-->
+<!--        </properties>-->
+<!--    </persistence-unit>-->
+
+    <persistence-unit name="booking-hibernate" transaction-type="JTA">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
+        <!-- Only used when transaction-type=JTA -->
+        <jta-data-source>osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=booking)</jta-data-source>
+
+        <!-- Only used when transaction-type=RESOURCE_LOCAL -->
+        <non-jta-data-source>osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=booking)</non-jta-data-source>
+        <class>org.mss.jpa.booking.Booking</class>
         <properties>
-<!--            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />-->
-            <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver" />
-            <!-- The JDBC URL to the database instance -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/tacocloud" />
-            <!-- The database username -->
-            <property name="javax.persistence.jdbc.user" value="abc" />
-            <!-- The database password -->
-            <property name="javax.persistence.jdbc.password" value="Qwe123$$" />
+            <property name="eclipselink.target-database" value="HSQL" />
+            <property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+            <property name="eclipselink.ddl-generation.output-mode" value="database" />
         </properties>
     </persistence-unit>
 

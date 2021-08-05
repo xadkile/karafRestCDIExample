@@ -1,23 +1,15 @@
-package org.mss.jpa;
+package org.mss.jpa.ingredient;
 
-import org.apache.aries.jpa.template.JpaTemplate;
-import org.apache.aries.jpa.template.TransactionType;
-import org.osgi.service.cdi.annotations.Service;
-import org.osgi.service.component.annotations.Reference;
-
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.inject.Model;
-import javax.inject.Inject;
 import javax.persistence.*;
-import javax.transaction.Transactional;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-@ApplicationScoped
+//@ApplicationScoped
+//@Transactional
 public class IngredientJPAService {
 
-    @Inject
+//    @Inject
+//    @PersistenceContext(unitName = "tacoCloudDbUnit")
     private EntityManager entityManager;
     public List<Ingredient> list() {
         if(entityManager==null){
