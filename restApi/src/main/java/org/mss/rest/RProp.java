@@ -10,7 +10,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 
 /**
- * indicate that a bean class has "osgi.jaxrs.resource" = true, so that they are registered correctly
+ * indicate that a bean class has "osgi.jaxrs.resource" = true, so that they are registered as JAX-RS (rest api) resource correctly
  * This is mandatory
  */
 @Retention(RUNTIME)

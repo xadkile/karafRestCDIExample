@@ -6,12 +6,12 @@
     <repository>mvn:org.apache.aries.cdi/aries-cdi-feature/1.1.3/xml/features</repository>
     <feature name="mss-req">
         <!-- http -->
-        <feature prerequisite="true">http</feature>
-        <feature prerequisite="true">http-whiteboard</feature>
+        <feature >http</feature>
+        <feature >http-whiteboard</feature>
         <!-- CDI -->
-        <feature prerequisite="true">pax-cdi-weld</feature>
+<!--        <feature >pax-cdi-weld</feature>-->
         <!-- JAX-RS whiteboard-->
-        <feature prerequisite="true">osgi-cdi-owb</feature>
+        <feature >osgi-cdi-owb</feature>
         <feature>pax-web-http-whiteboard</feature>
         <feature>aries-jax-rs-whiteboard</feature>
         <feature>aries-jax-rs-whiteboard-jackson</feature>
@@ -21,7 +21,7 @@
             mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.saaj-api-1.3/${servicemix-spec.version}</bundle>
         <!-- JPA -->
         <feature>jdbc</feature>
-<!--        <feature >pax-jdbc-config</feature>-->
+        <feature >pax-jdbc-config</feature>
         <feature>transaction</feature>
         <feature>jndi</feature>
         <feature>pax-jdbc-pool-dbcp2</feature>

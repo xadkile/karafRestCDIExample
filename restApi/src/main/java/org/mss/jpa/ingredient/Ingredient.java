@@ -4,10 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-//@Entity
-//@Table("ingredient")
+@Entity(name = "Ingredient")
 public class Ingredient{
-//    @Id
+    @Id
     String id;
     String name;
     String type;

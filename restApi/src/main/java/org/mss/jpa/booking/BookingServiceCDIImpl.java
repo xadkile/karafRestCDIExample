@@ -38,15 +38,12 @@ import java.util.List;
 /**
  * Implementation of the booking service using the JPA entity manager service (provided by Karaf).
  */
+
 //@Transactional
-//@ApplicationScoped
-//@RProp
-//@Service(BookingService.class)
 public class BookingServiceCDIImpl implements BookingService {
 
-    @Inject
-    @PersistenceContext(unitName = "booking-hibernate")
-    @Reference
+//    @Inject
+//    @PersistenceContext(unitName = "booking-hibernate")
     private EntityManager entityManager;
 
     public void setEntityManager(EntityManager entityManager) {

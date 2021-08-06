@@ -3,19 +3,43 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 
-<!--    <persistence-unit name="tacoCloudDbUnit" transaction-type="RESOURCE_LOCAL">-->
+<!--    <persistence-unit name="tacoCloudDbUnitMySql" transaction-type="JTA">-->
 <!--        &lt;!&ndash; Persistence provider &ndash;&gt;-->
 <!--        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
 <!--        &lt;!&ndash; Only used when transaction-type=JTA &ndash;&gt;-->
-<!--        <jta-data-source>osgi:service/javax.sql.DataSource/(osgi.jndi.service.name = tacoCloudDb)</jta-data-source>-->
+<!--        <jta-data-source>osgi:service/javax.sql.DataSource/(osgi.jndi.service.name = tacoCloudMySql)</jta-data-source>-->
 
 <!--        &lt;!&ndash; Only used when transaction-type=RESOURCE_LOCAL &ndash;&gt;-->
-<!--        <non-jta-data-source>osgi:service/javax.sql.DataSource/(osgi.jndi.service.name = tacoCloudDb)</non-jta-data-source>-->
+<!--        <non-jta-data-source>osgi:service/javax.sql.DataSource/(osgi.jndi.service.name = tacoCloudMySql)</non-jta-data-source>-->
 <!--        <properties>-->
-<!--            <property name="eclipselink.target-database" value="MySql" />-->
+<!--            <property name="eclipselink.target-database" value="MySQL" />-->
+<!--            <property name="eclipselink.ddl-generation" value="create-tables" />-->
 <!--            <property name="eclipselink.ddl-generation.output-mode" value="database" />-->
 <!--        </properties>-->
 <!--    </persistence-unit>-->
+
+    <persistence-unit name="tacoCloudDbUnit" transaction-type="JTA">
+        <!-- Persistence provider -->
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <!-- Only used when transaction-type=JTA -->
+        <jta-data-source>
+            osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=tacoCloudMySql)
+        </jta-data-source>
+
+        <!-- Only used when transaction-type=RESOURCE_LOCAL -->
+        <non-jta-data-source>
+            osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=tacoCloudMySql)
+        </non-jta-data-source>
+        <properties>
+<!--            <property name="eclipselink.target-database" value="PostgreSQL" />-->
+            <property name="eclipselink.target-database" value="MySQL" />
+            <property name="eclipselink.ddl-generation" value="create-tables" />
+            <property name="eclipselink.ddl-generation.output-mode" value="database" />
+        </properties>
+    </persistence-unit>
+
+
+
 
     <persistence-unit name="booking-hibernate" transaction-type="JTA">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>

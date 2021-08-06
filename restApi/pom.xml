@@ -99,10 +99,10 @@
                         <_cdiannotations>*;discover=annotated</_cdiannotations>
                         <!-- JPA: this Meta-Persistence cause buggy feature -->
                         <Meta-Persistence>META-INF/persistence.xml</Meta-Persistence>
-                        <Import-Package>
-                            javax.persistence;version="[2,3)",
-                            *
-                        </Import-Package>
+<!--                        <Import-Package>-->
+<!--                            javax.persistence;version="[2,3)",-->
+<!--                            *-->
+<!--                        </Import-Package>-->
                     </instructions>
                 </configuration>
             </plugin>
