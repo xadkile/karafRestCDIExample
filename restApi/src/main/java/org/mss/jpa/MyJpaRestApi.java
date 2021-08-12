@@ -59,28 +59,4 @@ public class MyJpaRestApi {
     public List<Booking> getBooking() {
         return bookingService.list();
     }
-
-
-//
-//    @Inject
-//    @Reference(target = "(osgi.jndi.service.name=tacoCloudPost)")
-//    DataSource dataSource;
-
-//    @Inject
-//    @Reference(target = "(osgi.unit.name=booking-hibernate)")
-//    private JpaTemplate dataSource;
-    /**
-     * http://localhost:8181/ingredient/check
-     * @return
-     */
-//    @GET
-//    @Path("check")
-//    @Produces("application/json")
-//    public String check(){
-//        if(dataSource!=null){
-//            return String.format("{\"z\":\"%s\"}", dataSource.getClass().getName());
-//        }else{
-//            return "{\"z\":\"null\"}";
-//        }
-//    }
 }

@@ -23,12 +23,12 @@
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <!-- Only used when transaction-type=JTA -->
         <jta-data-source>
-            osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=tacoCloudMySql)
+            osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=tacoCloudPost)
         </jta-data-source>
 
         <!-- Only used when transaction-type=RESOURCE_LOCAL -->
         <non-jta-data-source>
-            osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=tacoCloudMySql)
+            osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=tacoCloudPost)
         </non-jta-data-source>
         <properties>
 <!--            <property name="eclipselink.target-database" value="PostgreSQL" />-->
