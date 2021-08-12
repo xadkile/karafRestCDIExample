@@ -17,20 +17,8 @@
 package org.mss.jpa.booking;
 
 
-import org.apache.aries.jpa.template.JpaTemplate;
-import org.apache.aries.jpa.template.TransactionType;
-import org.mss.rest.RProp;
-import org.osgi.service.cdi.annotations.Bean;
-import org.osgi.service.cdi.annotations.Reference;
-import org.osgi.service.cdi.annotations.Service;
-import org.osgi.service.component.annotations.Component;
-
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
-import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 import java.util.List;

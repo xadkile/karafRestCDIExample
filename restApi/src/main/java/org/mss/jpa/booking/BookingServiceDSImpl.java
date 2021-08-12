@@ -17,19 +17,12 @@
 package org.mss.jpa.booking;
 
 
+import org.apache.aries.jpa.template.JpaTemplate;
 import org.apache.aries.jpa.template.TransactionType;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.context.SessionScoped;
-import javax.inject.Inject;
-import javax.persistence.*;
-import javax.transaction.Transactional;
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
-import org.apache.aries.jpa.template.JpaTemplate;
 /**
  * Implementation of the booking service using the JPA entity manager service (provided by Karaf).
  */
