@@ -9,7 +9,13 @@
 
 Need:
 
-install booking h2 datasource in karaf jpa example
+install booking h2 datasource in karaf jpa example:
+
+feature:repo-add mvn:org.apache.karaf.examples/karaf-jpa-example-features/LATEST/xml
+
+feature:install karaf-jpa-example-datasource
+
+feature:install karaf-jpa-example-provider-ds-eclipselink
 
 create postgresql datasource:
 

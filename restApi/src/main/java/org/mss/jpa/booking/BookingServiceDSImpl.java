@@ -26,10 +26,10 @@ import java.util.List;
 /**
  * Implementation of the booking service using the JPA entity manager service (provided by Karaf).
  */
-@Component(service = BookingService.class, immediate = true)
+//@Component(service = BookingService.class, immediate = true)
 public class BookingServiceDSImpl implements BookingService {
 
-    @Reference(target = "(osgi.unit.name=booking-hibernate)")
+//    @Reference(target = "(osgi.unit.name=booking-hibernate)")
     private JpaTemplate jpaTemplate;
 
     @Override
