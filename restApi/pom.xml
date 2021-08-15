@@ -11,6 +11,11 @@
     <artifactId>restApi</artifactId>
     <packaging>bundle</packaging>
     <dependencies>
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>spring-package-api</artifactId>
+            <version>1.0</version>
+        </dependency>
         <!-- Junit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>

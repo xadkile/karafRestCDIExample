@@ -8,8 +8,11 @@
 
 
 Need:
+3. install base env
+   feature:repo-add mvn:org.bitbucket.xadkile.sandwich/sandwich-base-env/LATEST/xml
+   feature:install sandwich-base-env
 
-install booking h2 datasource in karaf jpa example:
+1. install booking h2 datasource in karaf jpa example:
 
 feature:repo-add mvn:org.apache.karaf.examples/karaf-jpa-example-features/LATEST/xml
 
@@ -17,7 +20,9 @@ feature:install karaf-jpa-example-datasource
 
 feature:install karaf-jpa-example-provider-ds-eclipselink
 
-create postgresql datasource:
+2. create postgresql datasource:
 
 jdbc:ds-create -dn "PostgreSQL JDBC Driver" -url jdbc:postgresql://localhost:5432/tacocloud -u abc -p Qwe123$$  tacoCloudPost
+
+3. install firebase spring package
 
