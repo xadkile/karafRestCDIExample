@@ -12,15 +12,31 @@
     <packaging>bundle</packaging>
     <dependencies>
         <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>spring-package-api</artifactId>
+            <groupId>org.bitbucket.xadkile.sandwich</groupId>
+            <artifactId>redis-connection-providers</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>3.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.firebase</groupId>
+            <artifactId>firebase-admin</artifactId>
+            <version>6.11.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.bitbucket.xadkile.sandwich</groupId>
+            <artifactId>ggcloud-api</artifactId>
             <version>1.0</version>
         </dependency>
         <!-- Junit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>RELEASE</version>
+            <version>5.7.1</version>
             <scope>test</scope>
         </dependency>
         <!-- osgi core v7 -->
@@ -28,6 +44,7 @@
             <groupId>org.osgi</groupId>
             <artifactId>osgi.core</artifactId>
             <version>7.0.0</version>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Whiteboard JaxRs -->
@@ -55,6 +72,7 @@
             <groupId>org.osgi</groupId>
             <artifactId>osgi.cmpn</artifactId>
             <version>7.0.0</version>
+            <scope>provided</scope>
         </dependency>
 
         <!-- JPA -->
@@ -79,6 +97,7 @@
             <groupId>org.apache.aries.jpa</groupId>
             <artifactId>org.apache.aries.jpa.api</artifactId>
             <version>2.7.2</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -89,6 +108,12 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.karaf.tooling</groupId>
+                <artifactId>karaf-maven-plugin</artifactId>
+                <version>4.3.2</version>
+                <extensions>true</extensions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
