@@ -11,6 +11,25 @@
     <artifactId>restApi</artifactId>
     <packaging>bundle</packaging>
     <dependencies>
+
+        <!-- gg cloud -->
+
+        <!-- https://mvnrepository.com/artifact/org.apache.derby/derbyclient -->
+        <!-- this is for java 8 only, for java 15, version should be 10.15.x.x -->
+        <dependency>
+            <groupId>org.apache.derby</groupId>
+            <artifactId>derbyclient</artifactId>
+            <version>10.8.3.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.derby/derby -->
+        <!-- this is for java 8 only, for java 15, version should be 10.15.x.x -->
+        <dependency>
+            <groupId>org.apache.derby</groupId>
+            <artifactId>derby</artifactId>
+            <version>10.8.3.0</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.bitbucket.xadkile.sandwich</groupId>
             <artifactId>redis-connection-providers</artifactId>
@@ -20,6 +39,7 @@
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
             <version>3.6.0</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.google.firebase</groupId>
@@ -29,9 +49,10 @@
         </dependency>
         <dependency>
             <groupId>org.bitbucket.xadkile.sandwich</groupId>
-            <artifactId>ggcloud-api</artifactId>
+            <artifactId>ggcloud-provider-api</artifactId>
             <version>1.0</version>
         </dependency>
+
         <!-- Junit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -113,6 +134,22 @@
                 <artifactId>karaf-maven-plugin</artifactId>
                 <version>4.3.2</version>
                 <extensions>true</extensions>
+                <executions>
+                    <execution>
+                        <id>deploy</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                        <configuration>
+                            <port>8101</port>
+                            <host>localhost</host>
+                            <instance>karaf-root</instance>
+                            <user>user1</user>
+                            <password>123456</password>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.felix</groupId>
@@ -124,10 +161,6 @@
                         <_cdiannotations>*;discover=annotated</_cdiannotations>
                         <!-- JPA: this Meta-Persistence cause buggy feature -->
                         <Meta-Persistence>META-INF/persistence.xml</Meta-Persistence>
-<!--                        <Import-Package>-->
-<!--                            javax.persistence;version="[2,3)",-->
-<!--                            *-->
-<!--                        </Import-Package>-->
                     </instructions>
                 </configuration>
             </plugin>

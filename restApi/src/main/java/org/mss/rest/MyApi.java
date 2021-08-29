@@ -46,6 +46,7 @@ public class MyApi {
             ms.getHolder().getClass1().hashCode(),
             ms.hashCode(),
             service.hashCode(),
+//            "xxx",
             ms.checkSame(),
             this.hashCode()
             );

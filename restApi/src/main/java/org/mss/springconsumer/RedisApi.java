@@ -7,18 +7,25 @@ import org.osgi.service.cdi.annotations.*;
 import org.osgi.service.component.annotations.Component;
 import redis.clients.jedis.Jedis;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
+//@Path("/redisApi")
+//@Dependent
+//@Service
+//@ServiceInstance(ServiceScope.PROTOTYPE)
+//@RProp
+@RProp
 @Path("/redisApi")
-@Dependent
 @Service
 @ServiceInstance(ServiceScope.PROTOTYPE)
-@RProp
-@Component
+@SingleComponent
+@Named("Champ") //not working
 public class RedisApi {
 
     @Inject
@@ -30,6 +37,17 @@ public class RedisApi {
     @Path("/run")
     @Produces("application/json")
     public String runApi() throws Exception {
-        return String.format("{\"x\":%s}", jedis.get("myKey"));
+        return String.format("{\"x1\":%s}", jedis.get("myKey"));
+    }
+
+    // http://localhost:8181/redisApi/run2
+    @GET
+    @Path("/run2")
+    @Produces("application/json")
+    public String runApi2() throws Exception {
+        return String.format("{\"x2\":%s}", jedis.get("myKey"));
     }
 }
+
+
+
