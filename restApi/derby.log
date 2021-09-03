@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Fri Sep 03 17:49:49 ICT 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.3.0 - (1405108): instance a816c00e-017b-ab47-6a84-0000074b10b0 
+on database directory memory:/home/abc/Documents/gits/karafRestCDIExample/restApi/demo  with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@5bc2b487 
+Loaded from file:/home/abc/.m2/repository/org/apache/derby/derby/10.8.3.0/derby-10.8.3.0.jar
+java.vendor=Private Build
+java.runtime.version=14.0.2+12-Ubuntu-120.04
+user.dir=/home/abc/Documents/gits/karafRestCDIExample/restApi
+os.name=Linux
+os.arch=amd64
+os.version=5.11.0-27-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

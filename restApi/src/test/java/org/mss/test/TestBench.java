@@ -10,6 +10,11 @@ import java.sql.Statement;
 
 public class TestBench {
     @Test
+    void z(){
+        double x = 1.e2;
+        System.out.println(x);
+    }
+    @Test
     void testDerby() throws Exception{
         String url = "jdbc:derby:memory:demo;create=true";
         Connection conn = DriverManager.getConnection(url);
